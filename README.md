@@ -11,8 +11,8 @@ Pytorch<br>
 
 Machine Learning<br><br>
 
-scikit-learn - LinearRegression<br>
+Scikit-learn - LinearRegression<br>
 <img width="1916" height="901" alt="영화 흥행" src="https://github.com/user-attachments/assets/a8a8d72e-bb06-4092-a296-310cc31da81f" /><br><br>
 
-scikit-learn - SGDRegressor<br>
+Scikit-learn - SGDRegressor<br>
 <img width="1918" height="811" alt="영화 평점" src="https://github.com/user-attachments/assets/33370c02-7ae9-4522-b392-7914b824166b" />
