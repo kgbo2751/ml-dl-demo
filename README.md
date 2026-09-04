@@ -1,1 +1,1 @@
-Visual Studio Code + Python + HTML/CSS/JavaScript + FastAPI (Web) + Next.js (Full Stack Framework) + Machine Learning (scikit-learn - LinearRegression, SGDRegressor) + Deep Learning (Tensorflow + Pytorch)
+Visual Studio Code + Python + HTML/Tailwind CSS/TypeScript + FastAPI (Web) + Next.js (Full Stack Framework) + Machine Learning (scikit-learn - LinearRegression, SGDRegressor) + Deep Learning (Tensorflow + Pytorch)
