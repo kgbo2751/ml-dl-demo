@@ -1,9 +1,0 @@
-# backend run:
-# cd backend
-# .\venv\Scripts\Activate
-# uvicorn main:app --reload --port 8000
-
-# frontend run (new terminal):
-# cd frontend
-# npm run dev
-# http://localhost:3000
