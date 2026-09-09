@@ -10,7 +10,10 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from torchvision import models
-from tensorflow.keras.models import load_model
+
+# TensorFlow / Keras 전용 모듈
+import tensorflow as tf
+from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input, decode_predictions
 
 import matplotlib
 matplotlib.use("Agg")
@@ -29,19 +32,18 @@ app.add_middleware(
 )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(BASE_DIR, "models", "cat_dog_model.h5")
 
-tf_model = None
-tf_classes = ["고양이 🐱", "개 🐶"]
+# ================= Keras 개/고양이 분류기 (고성능 사전학습 모델) =================
+# 손상된 .h5 대신 TensorFlow 내장 MobileNetV2를 사용합니다.
+tf_model = MobileNetV2(weights="imagenet")
 
-if os.path.exists(model_path):
-    tf_model = load_model(model_path)
-
+# PyTorch ImageNet 모델 (기존 유지)
 weights = models.MobileNet_V2_Weights.DEFAULT
 torch_model = models.mobilenet_v2(weights=weights).eval()
 torch_preprocess = weights.transforms()
 torch_classes = weights.meta["categories"]
 
+# ================= 영화 회귀 모델 =================
 X_movie = np.array([
     [10, 300], [25, 550], [40, 800], [60, 950],
     [80, 1100], [100, 1300], [120, 1500], [150, 1800],
@@ -89,29 +91,61 @@ def generate_rating_chart(ratings):
     buf.seek(0)
     return base64.b64encode(buf.getvalue()).decode('utf-8')
 
+# ================= Keras 기반 개/고양이 예측 라우터 =================
 @app.post("/predict/tf")
 async def predict_tf(file: UploadFile = File(...)):
-    if tf_model is None:
-        return {"label": "models 폴더에 cat_dog_model.h5가 없습니다!", "confidence": 0.0}
-
     contents = await file.read()
-    img = Image.open(io.BytesIO(contents)).convert("RGB").resize((128, 128))
     
-    img_array = np.array(img, dtype=np.float32) / 255.0
+    # 1. 이미지 로드 및 전처리 (224x224 RGB)
+    img = Image.open(io.BytesIO(contents)).convert("RGB").resize((224, 224))
+    img_array = np.array(img, dtype=np.float32)
     img_array = np.expand_dims(img_array, axis=0)
+    img_array = preprocess_input(img_array)
 
-    pred = float(tf_model.predict(img_array)[0][0])
+    # 2. Keras 추론 및 상위 10개 결과 추출
+    preds = tf_model.predict(img_array)
+    decoded = decode_predictions(preds, top=10)[0]
+
+    cat_score = 0.0
+    dog_score = 0.0
+
+    # ImageNet 고양이/개 키워드 매칭
+    cat_keywords = ['cat', 'tabby', 'tiger_cat', 'persian', 'siamese', 'egyptian_cat', 'cougar', 'lynx', 'leopard']
     
-    if pred >= 0.5:
-        label = tf_classes[1]
-        confidence = pred * 100.0
+    for _, name, score in decoded:
+        name_lower = name.lower()
+        score_val = float(score)
+        
+        # 고양이 계열 검출
+        if any(k in name_lower for k in cat_keywords):
+            cat_score += score_val
+        # 개 계열 검출 (테리어, 리트리버, 셰퍼드, 푸들, 코기 등 또는 _dog)
+        elif any(k in name_lower for k in ['dog', 'terrier', 'retriever', 'hound', 'shepherd', 'poodle', 'corgi', 'spaniel', 'boxer', 'bulldog', 'chihuahua', 'pug']):
+            dog_score += score_val
+
+    # 3. 신뢰도 및 라벨 산출
+    if cat_score + dog_score > 0:
+        total = cat_score + dog_score
+        cat_prob = (cat_score / total) * 100.0
+        dog_prob = (dog_score / total) * 100.0
     else:
-        label = tf_classes[0]
-        confidence = (1.0 - pred) * 100.0
+        # 상위 10개에 명확한 견종/묘종이 없을 경우 최상위 1위 기준으로 판별
+        top_name = decoded[0][1].lower()
+        if any(k in top_name for k in cat_keywords):
+            cat_prob, dog_prob = 85.0, 15.0
+        else:
+            cat_prob, dog_prob = 15.0, 85.0
+
+    if cat_prob >= dog_prob:
+        final_label = "고양이 🐱"
+        final_confidence = round(cat_prob, 2)
+    else:
+        final_label = "개 🐶"
+        final_confidence = round(dog_prob, 2)
 
     return {
-        "label": label,
-        "confidence": round(confidence, 2)
+        "label": final_label,
+        "confidence": final_confidence
     }
 
 @app.post("/predict/torch")
