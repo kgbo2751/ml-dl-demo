@@ -4,7 +4,7 @@ Visual Studio Code + Python + HTML/Tailwind CSS/TypeScript + FastAPI (Web) + Nex
 Deep Learning<br><br>
 
 Tensorflow - Keras<br>
-<img width="1917" height="960" alt="개 고양이 분류" src="https://github.com/user-attachments/assets/38415220-eb54-4dc3-82a1-a1fb5dd90734" /><br><br>
+<img width="1895" height="896" alt="개 고양이 분류" src="https://github.com/user-attachments/assets/1434ed30-e1aa-4bd0-a291-d6a9d283060e" /><br><br>
 
 Pytorch<br>
 <img width="1918" height="966" alt="사물 분류" src="https://github.com/user-attachments/assets/dac63732-0d4a-4be1-88c4-aa0f4d3d64ab" /><br><br>
