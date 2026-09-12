@@ -18,9 +18,11 @@ Scikit-learn - SGDRegressor<br>
 <img width="1240" height="595" alt="영화 평점" src="https://github.com/user-attachments/assets/db6ea50a-889a-4b6f-ab59-2833dd4b1108" /><br><br>
 
 Youtube Filter<br>
-<img width="1222" height="976" alt="유튜브 포함 키워드" src="https://github.com/user-attachments/assets/b0b7f329-0f00-4988-b022-6fb9d5f2af29" />
-<img width="1225" height="972" alt="유튜브 포함 키워드2" src="https://github.com/user-attachments/assets/3dd0bd7b-7a73-4744-b03d-89d3424b7aab" />
-<img width="1218" height="967" alt="유튜브 제외 키워드" src="https://github.com/user-attachments/assets/74c40830-73e2-4f5c-8713-986aff3e7b21" />
-<img width="1220" height="973" alt="유튜브 제외 키워드2" src="https://github.com/user-attachments/assets/8c717e2b-003a-4023-b4a7-10c5828dad65" />
-<img width="1217" height="962" alt="유튜브 머신러닝 필터링" src="https://github.com/user-attachments/assets/cb2b28a3-3b65-4428-bb51-af03c8032f8f" />
+<img width="1222" height="976" alt="유튜브 포함 키워드" src="https://github.com/user-attachments/assets/b0b7f329-0f00-4988-b022-6fb9d5f2af29" /><br>
+<img width="1225" height="972" alt="유튜브 포함 키워드2" src="https://github.com/user-attachments/assets/3dd0bd7b-7a73-4744-b03d-89d3424b7aab" /><br><br>
+
+<img width="1218" height="967" alt="유튜브 제외 키워드" src="https://github.com/user-attachments/assets/74c40830-73e2-4f5c-8713-986aff3e7b21" /><br>
+<img width="1220" height="973" alt="유튜브 제외 키워드2" src="https://github.com/user-attachments/assets/8c717e2b-003a-4023-b4a7-10c5828dad65" /><br><br>
+
+<img width="1217" height="962" alt="유튜브 머신러닝 필터링" src="https://github.com/user-attachments/assets/cb2b28a3-3b65-4428-bb51-af03c8032f8f" /><br>
 <img width="1222" height="972" alt="유튜브 머신러닝 필터링2" src="https://github.com/user-attachments/assets/c5fa68c6-ebfe-4897-abf2-a658f8b65bf6" />
