@@ -1,5 +1,8 @@
-Visual Studio Code + Python (Library - Pandas, Numpy, Matplotlib) + HTML/CSS/TypeScript + Django (Web) + Next.js + Deep Learning (Tensorflow - Keras + Pytorch - MobileNetV2) + Machine Learning (​Scikit-learn - LinearRegression, SGDRegressor) + Youtube Data API<br>
+Visual Studio Code + Python (Library - Pandas, Numpy, Matplotlib) + HTML/CSS/TypeScript + Django (Web) + Next.js (+ESLint) + Deep Learning (Tensorflow - Keras + Pytorch - MobileNetV2) + Machine Learning (​Scikit-learn - LinearRegression, SGDRegressor) + Youtube Data API<br>
 <img width="1920" height="1140" alt="코드" src="https://github.com/user-attachments/assets/22b7f751-f20b-40c0-a679-e9f09242fb18" /><br><br>
+
+ESLint<br>
+<img width="1505" height="352" alt="eslint" src="https://github.com/user-attachments/assets/1fdf162c-2437-43d4-bed8-b4d2b0e991ab" /><br><br>
 
 Deep Learning<br><br>
 
