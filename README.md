@@ -1,16 +1,16 @@
-Visual Studio Code + Python (Library - Pandas, Numpy, Matplotlib) + HTML/CSS/TypeScript + Django (Web) + Next.js (+ ESLint) + Deep Learning (Tensorflow - Keras + Pytorch - MobileNetV2) + Machine Learning (​Scikit-learn - LinearRegression, SGDRegressor) + Youtube Data API + Dotenv (Library)<br>
-<img width="1920" height="1140" alt="코드" src="https://github.com/user-attachments/assets/22b7f751-f20b-40c0-a679-e9f09242fb18" /><br><br>
+Visual Studio Code + Python (Library - Pandas, Numpy, Matplotlib) + HTML/CSS/TypeScript + Django (Web) + Next.js (+ ESLint) + Deep Learning (Tensorflow - MobileNetV2 + Pytorch - ResNet-50) + Machine Learning (​Scikit-learn - LinearRegression, SGDRegressor) + Youtube Data API + Dotenv (Library)<br>
+<img width="1920" height="1140" alt="코드" src="https://github.com/user-attachments/assets/59c8a4f1-944f-4ed6-bcd7-8eaab69b93e3" /><br><br>
 
 ESLint<br>
 <img width="1505" height="352" alt="eslint" src="https://github.com/user-attachments/assets/1fdf162c-2437-43d4-bed8-b4d2b0e991ab" /><br><br>
 
 Deep Learning<br><br>
 
-Tensorflow - Keras​<br>
+Tensorflow - MobileNetV2​<br>
 <img width="1228" height="793" alt="개 고양이 분류" src="https://github.com/user-attachments/assets/d02098ac-e39e-40ce-a9ca-559dc062a7bb" /><br><br>
 
-Pytorch - MobileNetV2<br>
-<img width="1231" height="637" alt="사물 분류" src="https://github.com/user-attachments/assets/b6d43ced-f8a9-4b61-8400-99e6dd4e62e6" /><br><br>
+Pytorch - ResNet-50<br>
+<img width="1638" height="846" alt="사물 분류" src="https://github.com/user-attachments/assets/c18d0ba2-c360-4495-8ad2-05744679b088" /><br><br>
 
 Machine Learning<br><br>
 
