@@ -38,8 +38,8 @@ else:
 
 tf_model = MobileNetV2(weights="imagenet")
 
-weights = models.MobileNet_V2_Weights.DEFAULT
-torch_model = models.mobilenet_v2(weights=weights).eval()
+weights = models.ResNet50_Weights.DEFAULT
+torch_model = models.resnet50(weights=weights).eval()
 torch_preprocess = weights.transforms()
 torch_classes = weights.meta["categories"]
 

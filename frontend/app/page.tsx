@@ -250,7 +250,7 @@ export default function Home() {
             <span className="text-4xl">🔍</span>
             <div>
               <h2 className="text-2xl font-bold text-slate-800">사물 1,000종 이미지 감지기</h2>
-              <p className="text-sm font-semibold text-indigo-600">Engine: PyTorch (MobileNetV2 ImageNet)</p>
+              <p className="text-sm font-semibold text-indigo-600">Engine: PyTorch (ResNet-50 ImageNet)</p>
             </div>
           </div>
 
